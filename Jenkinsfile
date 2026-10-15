@@ -19,12 +19,14 @@ pipeline {
             }
         }
 
-        stage('SonarQube Analysis') {
-            steps {
-                withSonarQubeEnv('SonarQube') {
-                   mvn sonar:sonar -Dsonar.projectKey=SAST-Demo-67 -Dsonar.projectName=SAST-Demo-67
-                }
-            }
+        
+stage('SonarQube Analysis') {
+    steps {
+        withSonarQubeEnv('SonarQube') {
+            bat 'mvn sonar:sonar -Dsonar.projectKey=SAST-Demo-67 -Dsonar.projectName=SAST-Demo-67'
         }
+    }
+}
+
     }
 }
