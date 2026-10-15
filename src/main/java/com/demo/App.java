@@ -10,7 +10,7 @@ public class App {
             System.err.println("Please provide a username.");
             return;
         }
-
+    
         String username = args[0];
         System.out.println("Welcome " + username);
     }
